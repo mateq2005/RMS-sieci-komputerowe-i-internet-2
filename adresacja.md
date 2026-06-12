@@ -1,5 +1,10 @@
+# Sieci komputerowe i Internet
+
+**Autor: Mateusz Banaszczyk**
+
+---
+
 # Poradnik: Adresacja IPv4 i IPv6
-### Na podstawie analizy pytań egzaminacyjnych (poziom CCNA)
 
 ---
 
