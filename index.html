@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetCalc Pro — Kalkulator Podsieci IPv4 / IPv6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated binary background -->
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <div class="app-wrapper">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">NetCalc<span class="logo-accent">Pro</span></span>
+      </div>
+      <p class="logo-sub">Zaawansowany Kalkulator &amp; Analizator Podsieci</p>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-nav" role="tablist" aria-label="Wybór protokołu">
+      <button class="tab-btn active" role="tab" aria-selected="true"  aria-controls="panel-ipv4" id="tab-ipv4" data-tab="ipv4">
+        <span class="tab-icon">◈</span> IPv4
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ipv6" id="tab-ipv6" data-tab="ipv6">
+        <span class="tab-icon">◉</span> IPv6
+      </button>
+    </nav>
+
+    <main class="main-content">
+
+      <!-- ===================== IPv4 Panel ===================== -->
+      <section id="panel-ipv4" role="tabpanel" aria-labelledby="tab-ipv4" class="tab-panel active">
+
+        <!-- IPv4: Basic subnet calculator -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Analiza Podsieci IPv4</h2>
+            <span class="card-badge">RFC 950</span>
+          </div>
+          <div class="input-group">
+            <label for="ipv4-input">Adres IP z maską (CIDR lub dziesiętna)</label>
+            <div class="input-row">
+              <input type="text" id="ipv4-input" class="mono-input"
+                     placeholder="np. 192.168.1.100/24 lub 10.0.0.1 255.255.255.0"
+                     autocomplete="off" spellcheck="false" />
+              <button class="btn-primary" id="ipv4-calc-btn">Oblicz</button>
+            </div>
+            <p class="input-hint">Formaty: <code>192.168.1.1/24</code> lub <code>192.168.1.1 255.255.255.0</code></p>
+          </div>
+          <div id="ipv4-error" class="error-msg" role="alert" aria-live="polite"></div>
+          <div id="ipv4-results" class="results-grid hidden">
+            <div class="result-item">
+              <span class="result-label">Adres sieci</span>
+              <span class="result-value mono" id="r-network"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Maska podsieci</span>
+              <span class="result-value mono" id="r-mask"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Prefiks CIDR</span>
+              <span class="result-value mono" id="r-prefix"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Wildcard (odwrotna maska)</span>
+              <span class="result-value mono" id="r-wildcard"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Broadcast</span>
+              <span class="result-value mono" id="r-broadcast"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Pierwszy host</span>
+              <span class="result-value mono" id="r-first-host"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Ostatni host</span>
+              <span class="result-value mono" id="r-last-host"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Liczba hostów</span>
+              <span class="result-value mono" id="r-hosts"></span>
+            </div>
+            <div class="result-item result-item--full">
+              <span class="result-label">Klasa / Typ adresu</span>
+              <span class="result-value mono" id="r-class"></span>
+            </div>
+            <div class="result-item result-item--full">
+              <span class="result-label">Typ transmisji</span>
+              <span class="result-value mono" id="r-tx-type"></span>
+            </div>
+            <div class="result-item result-item--full">
+              <span class="result-label">Maska binarna</span>
+              <span class="result-value mono small" id="r-mask-bin"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- IPv4: VLSM Designer -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Projektant VLSM</h2>
+            <span class="card-badge">Variable Length Subnet Masking</span>
+          </div>
+          <div class="input-group">
+            <label for="vlsm-network">Sieć bazowa</label>
+            <input type="text" id="vlsm-network" class="mono-input"
+                   placeholder="np. 192.168.0.0/24" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="input-group">
+            <label for="vlsm-demands">Zapotrzebowanie na hosty (jedna liczba na linię lub po przecinku)</label>
+            <textarea id="vlsm-demands" class="mono-input" rows="4"
+                      placeholder="500&#10;100&#10;50&#10;10&#10;2"></textarea>
+          </div>
+          <button class="btn-primary" id="vlsm-calc-btn">Projektuj VLSM</button>
+          <div id="vlsm-error" class="error-msg" role="alert" aria-live="polite"></div>
+          <div id="vlsm-results" class="hidden"></div>
+        </div>
+
+        <!-- IPv4: Subnet split -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Podział Sieci na Podsieci</h2>
+            <span class="card-badge">Subnet Split</span>
+          </div>
+          <div class="input-row">
+            <div class="input-group flex-1">
+              <label for="split-network">Sieć bazowa</label>
+              <input type="text" id="split-network" class="mono-input"
+                     placeholder="np. 10.0.0.0/8" autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="input-group flex-1">
+              <label for="split-count">Liczba podsieci</label>
+              <input type="number" id="split-count" class="mono-input" placeholder="np. 8" min="2" max="65536" />
+            </div>
+          </div>
+          <button class="btn-primary" id="split-calc-btn">Oblicz podział</button>
+          <div id="split-error" class="error-msg" role="alert" aria-live="polite"></div>
+          <div id="split-results" class="hidden"></div>
+        </div>
+
+      </section>
+
+      <!-- ===================== IPv6 Panel ===================== -->
+      <section id="panel-ipv6" role="tabpanel" aria-labelledby="tab-ipv6" class="tab-panel hidden">
+
+        <!-- IPv6: Analyzer -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Analiza Adresu IPv6</h2>
+            <span class="card-badge">RFC 4291</span>
+          </div>
+          <div class="input-group">
+            <label for="ipv6-input">Adres IPv6 (z opcjonalnym prefiksem)</label>
+            <div class="input-row">
+              <input type="text" id="ipv6-input" class="mono-input"
+                     placeholder="np. 2001:db8::1/64 lub fe80::1" autocomplete="off" spellcheck="false" />
+              <button class="btn-primary" id="ipv6-calc-btn">Analizuj</button>
+            </div>
+            <p class="input-hint">Akceptowane: skrócone, pełne, z prefiksem CIDR</p>
+          </div>
+          <div id="ipv6-error" class="error-msg" role="alert" aria-live="polite"></div>
+          <div id="ipv6-results" class="results-grid hidden">
+            <div class="result-item result-item--full">
+              <span class="result-label">Pełna forma (rozwinięta)</span>
+              <span class="result-value mono" id="r6-expanded"></span>
+            </div>
+            <div class="result-item result-item--full">
+              <span class="result-label">Forma skrócona (skompresowana)</span>
+              <span class="result-value mono" id="r6-compressed"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Prefiks sieci</span>
+              <span class="result-value mono" id="r6-prefix"></span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Długość prefiksu</span>
+              <span class="result-value mono" id="r6-prefix-len"></span>
+            </div>
+            <div class="result-item result-item--full">
+              <span class="result-label">Typ adresu</span>
+              <span class="result-value mono" id="r6-type"></span>
+            </div>
+            <div class="result-item result-item--full">
+              <span class="result-label">Zakres (Scope)</span>
+              <span class="result-value mono" id="r6-scope"></span>
+            </div>
+            <div class="result-item result-item--full">
+              <span class="result-label">Adres Solicited-Node Multicast</span>
+              <span class="result-value mono" id="r6-solicited"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- IPv6: Subnet calculator -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Podział Prefiksu IPv6</h2>
+            <span class="card-badge">Prefix Division</span>
+          </div>
+          <div class="input-row">
+            <div class="input-group flex-1">
+              <label for="ipv6-split-net">Prefiks bazowy</label>
+              <input type="text" id="ipv6-split-net" class="mono-input"
+                     placeholder="np. 2001:db8::/32" autocomplete="off" spellcheck="false" />
+            </div>
+            <div class="input-group flex-1">
+              <label for="ipv6-split-new">Nowa długość prefiksu</label>
+              <input type="number" id="ipv6-split-new" class="mono-input"
+                     placeholder="np. 48" min="1" max="128" />
+            </div>
+          </div>
+          <button class="btn-primary" id="ipv6-split-btn">Oblicz podsieci</button>
+          <div id="ipv6-split-error" class="error-msg" role="alert" aria-live="polite"></div>
+          <div id="ipv6-split-results" class="hidden"></div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>NetCalc Pro &mdash; implementacja RFC 950, RFC 1918, RFC 4291 &mdash; kod open-source, gotowy na GitHub Pages</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
