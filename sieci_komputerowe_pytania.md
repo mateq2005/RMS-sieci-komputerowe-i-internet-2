@@ -117,13 +117,11 @@
 
 **12.** Wskaż maksymalną ilość hostów, jaką można zaadresować w ramach klasy adresowej `69.226.64.0/255.255.248.0`:
 
-- A. 2046
+- A. **2046** ✅ **[POPRAWNA ODPOWIEDŹ]**
 - B. 512
 - C. 1024
 - D. 524286
-- E. **4096** *(należy sprawdzić – maska 255.255.248.0 = /21, daje 2046 hostów; odpowiedź d. 524286 była zaznaczona na zdjęciu, ale jest błędna matematycznie – poprawna to 2046)*
-
-> **Uwaga:** Maska 255.255.248.0 to /21 → 2^11 – 2 = **2046** hostów. ✅ **[POPRAWNA ODPOWIEDŹ: a. 2046]**
+- E. 4096
 
 ---
 
