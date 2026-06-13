@@ -7,7 +7,7 @@
   {
     "pytanie": "Po wydaniu w wierszu poleceń systemu operacyjnego MS Windows polecenia ipconfig, zauważył(a)eś, że jeden z interfejsów posiada przypisany adres IPv6: FE80::D68C:B5FF:FECE:A0C0/64. Wskaż do jakiej grupy multicastowej tenże interfejs przystąpi na potrzeby protokołu Neighbours Discovery",
     "odpowiedzi": ["FF02::D68C:B5FF:FECE:A0C0", "2001::D68C:B5FF:FECE:A0C0", "FF02::FFCE:A0C0", "FF02::FFCE:A0C0 + jest jeszcze piąta odpowiedź", "FF02::1"],
-    "poprawne_odpowiedzi": ["FF02::FFCE:A0C0"]
+    "poprawne_odpowiedzi": ["FF02::1:FFCE:A0C0"]
   },
   {
     "pytanie": "Który typ adresu używa przełącznik podczas podejmowania decyzji o przekazaniu ramki na odpowiedni port",
@@ -112,7 +112,7 @@
   {
     "pytanie": "Wskaż które adresy należą do tej samej sieci co poniższy adres IP: 128.177.198.2/20",
     "odpowiedzi": ["128.177.216.18", "128.177.193.221", "128.177.206.21", "128.177.190.34", "128.177.218.2"],
-    "poprawne_odpowiedzi": ["128.177.206.21", "128.177.193.221", "128.177.216.18"]
+    "poprawne_odpowiedzi": ["128.177.206.21", "128.177.193.221"]
   },
   {
     "pytanie": "Wskaż jakie dwie funkcje zapewnia protokół ARP",
@@ -167,7 +167,7 @@
   {
     "pytanie": "Wskaż maksymalną ilość hostów, jaką można zaadresować w ramach klasy adresowej 13.178.126.0/255.255.254.0",
     "odpowiedzi": ["4096", "1024", "510", "65534"],
-    "poprawne_odpowiedzi": ["65534"]
+    "poprawne_odpowiedzi": ["510"]
   },
   {
     "pytanie": "Firma ma adres sieciowy 172.16.1.64 z maską podsieci 255.255.255.192. Firma ta chce stworzyć dwie podsieci, które będą zawierały odpowiednio 10 hostów i 18 hostów. Które dwie sieci będą mogły spełnić podane warunki",
