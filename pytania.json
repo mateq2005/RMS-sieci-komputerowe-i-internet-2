@@ -217,7 +217,7 @@
   {
     "pytanie": "Wskaż które adresy należą do tej samej sieci co poniższy adres IP: 11.56.78.139/21",
     "odpowiedzi": ["11.56.73.13", "11.56.71.212", "11.56.80.9", "11.56.79.14"],
-    "poprawne_odpowiedzi": ["11.56.79.14", "11.56.71.212"]
+    "poprawne_odpowiedzi": ["11.56.79.14", "11.56.73.13"]
   },
   {
     "pytanie": "Wskaż maksymalną ilość hostów, jaką można zaadresować w ramach klasy adresowej 29.112.132.0/255.255.255.192",
