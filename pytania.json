@@ -6,7 +6,7 @@
   },
   {
     "pytanie": "Po wydaniu w wierszu poleceń systemu operacyjnego MS Windows polecenia ipconfig, zauważył(a)eś, że jeden z interfejsów posiada przypisany adres IPv6: FE80::D68C:B5FF:FECE:A0C0/64. Wskaż do jakiej grupy multicastowej tenże interfejs przystąpi na potrzeby protokołu Neighbours Discovery",
-    "odpowiedzi": ["FF02::D68C:B5FF:FECE:A0C0", "2001::D68C:B5FF:FECE:A0C0", "FF02::FFCE:A0C0", "FF02::FFCE:A0C0 + jest jeszcze piąta odpowiedź", "FF02::1"],
+    "odpowiedzi": ["FF02::D68C:B5FF:FECE:A0C0", "2001::D68C:B5FF:FECE:A0C0", "FF02::FFCE:A0C0", "FF02::FFCE:A0C0", "FF02::1:FFCE:A0C0"],
     "poprawne_odpowiedzi": ["FF02::1:FFCE:A0C0"]
   },
   {
