@@ -172,7 +172,7 @@
   {
     "pytanie": "Firma ma adres sieciowy 172.16.1.64 z maską podsieci 255.255.255.192. Firma ta chce stworzyć dwie podsieci, które będą zawierały odpowiednio 10 hostów i 18 hostów. Które dwie sieci będą mogły spełnić podane warunki",
     "odpowiedzi": ["172.16.1.128/28 i 172.16.1.192/28", "172.16.1.64/29 i 172.16.1.128/29", "172.168.1.16/28 i 172.16.1.96/28", "172.16.1.64/27 i 172.16.1.128/27"],
-    "poprawne_odpowiedzi": ["172.16.1.64/27 i 172.16.1.127/27"]
+    "poprawne_odpowiedzi": ["172.16.1.64/27 i 172.16.1.128/27"]
   },
   {
     "pytanie": "Wskaż które adresy należą do tej samej sieci co poniższy adres IP: 17.14.55.199/19",
