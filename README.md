@@ -13,3 +13,5 @@
 Baza zawiera 63 pytania bez ilustracji.
 
 Pytania z ilustracjami w folderze /pytania.
+
+Podstawy adresacji sieciowej w pliku adresacja.md.
