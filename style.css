@@ -93,6 +93,12 @@ body {
     font-weight: 500;
 }
 
+.tagline a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /* ===========================
    STATES & CARDS
    =========================== */
