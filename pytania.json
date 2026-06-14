@@ -268,4 +268,117 @@
     "pytanie": "Wskaż zdanie prawdziwe w odniesieniu do informacji dotyczących konfiguracji interfejsu sieciowego zawartej na wyświetlanym ekranie",
     "odpowiedzi": ["interfejs ten korzysta z mechanizmu IPv6 Privacy Extension", "ruter ten odpowiada na zapytania Router Solicitation związane z mechanizmem SLAAC", "w ruterze tym nie został włączony ruting IPv6", "interfejs ten nie został włączony przez administratora"],
     "poprawne_odpowiedzi": ["ruter ten odpowiada na zapytania Router Solicitation związane z mechanizmem SLAAC"]
-  }]
+  },
+  {
+    "pytanie": "Wskaż, który adres IPv6 jest odpowiednikiem logicznym adresi IPv4 127.0.0.1",
+    "odpowiedzi": [
+      "::",
+      "FE80::1",
+      "0::/10",
+      "::1"
+    ],
+    "poprawne_odpowiedzi": [
+      "::1"
+    ],
+  },
+{
+    "pytanie": "Wskaż, które z poniższych urządzeń przesyła/przekazuje dane z jednego urządzenia w sieci komputerowej do innego urządzenia docelowego w oparciu o adres MAC",
+    "odpowiedzi": [
+      "przełącznik",
+      "modem",
+      "ruter",
+      "koncentrator"
+    ],
+    "poprawne_odpowiedzi": [
+      "przełącznik"
+    ],
+  },
+{
+    "pytanie": "Wskaż jakie funkcje zapewnia protokół ARP:",
+    "odpowiedzi": [
+      "Odwzorowanie adresów IP na adresy MAC",
+      "Utrzymywanie podręcznej pamięci odwzorowania",
+      "Definiowanie obszaru, w którym mogą wystąpić kolizje",
+      "Wyszukiwanie zakresu adresów IP w danej sieci lokalnej"
+    ],
+    "poprawne_odpowiedzi": [
+      "Odwzorowanie adresów IP na adresy MAC", "Utrzymywanie podręcznej pamięci odwzorowania"
+    ],
+  },
+{
+    "pytanie": "Po wpisaniu w systemie operacyjnym MS Windows w wierszu poleceń polecenie ipconfig, zostały wskazane dane uwidocznione na poniższym rysunku. Jest to adres typu lokalny dla łącza (link-local) wygenerowany przez system operacyjny metodą losową f. Jest to adres typu lokalny dla łącza (link-local) wygenerowany przez system z wykorzystaniem mechanizmu EUI-64",
+    "odpowiedzi": [
+      "Jest to adres typu unikalny globalny wygenerowany przez system z wykorzystaniem mechanizmu EUI-64",
+      "Jest to adres typu unikalny globalny wygenerowany przez system operacyjny metodą losową",
+      "Jest to adres typu unikalny lokalny wygenerowany przez system z wykorzystaniem mechanizmu EUI-64",
+      "Jest to adres typu unikalny lokalny wygenerowany przez system operacyjny metodą losową"
+    ],
+    "poprawne_odpowiedzi": [
+      "Jest to adres typu unikalny lokalny wygenerowany przez system z wykorzystaniem mechanizmu EUI-64"
+    ],
+  },
+{
+    "pytanie": "Transmisja wykorzystująca adres IPv4 z grupy od 224.0.0.0 do 239.255.255.255 to transmisja typu…",
+    "odpowiedzi": [
+      "point-to-point",
+      "unicast",
+      "broadcast",
+      "anycast",
+      "multicast"
+    ],
+    "poprawne_odpowiedzi": [
+      "multicast"
+    ],
+  },
+{
+    "pytanie": "Który typ adresu używa przełącznik/switch podczas podejmowania decyzji o przekazaniu ramki na odpowiedni port",
+    "odpowiedzi": [
+      "adres MAC odbiorcy",
+      "adres ARP odbiorcy",
+      "adres VLSM nadawcy",
+      "adres VLSM odbiorcy"
+    ],
+    "poprawne_odpowiedzi": [
+      "adres MAC odbiorcy"
+    ],
+  },
+{
+    "pytanie": "Wskaż, które dwie cechy są charakterystyczne dla protokołu UDP (w porównaniu z protokołem TCP):",
+    "odpowiedzi": [
+      "Pozwala uzyskać mniejsze opóźnienie transmisji danych",
+      "Pozwala uzyskać niezawodną transmisję danych",
+      "Umożliwia retransmisję zagubionych datagramów",
+      "Pozwala uzyskać większą prędkość transmisji, ze względu na mniejszy narzut danych w nagłówkach",
+      "Umożliwia zarządzanie przepływem danych"
+    ],
+    "poprawne_odpowiedzi": [
+      "Pozwala uzyskać mniejsze opóźnienie transmisji danych", "Pozwala uzyskać większą prędkość transmisji, ze względu na mniejszy narzut danych w nagłówkach"
+    ],
+  },
+{
+    "pytanie": "Na którym interfejsie przełącznika administrator musiałby skonfigurować adres IP w taki sposób, aby można było zarządzać przełącznikiem zdalnie?",
+    "odpowiedzi": [
+      "console 0",
+      "INT1",
+      "VTY 0",
+      "VTX",
+      "FastEthernet0/1",
+      "VLAN 1"
+    ],
+    "poprawne_odpowiedzi": [
+      "VLAN 1"
+    ],
+  },
+{
+    "pytanie": "Które z poniższych stwierdzeń najlepiej opisuje mechanizm Tri-Band wykorzystywany w sieciach bezprzewodowych typu mesh?",
+    "odpowiedzi": [
+      "Tri-Band jest mechanizmem umożliwiającym synchronizację trzech różnych sieci mesh w celu zapewnienia lepszego zasięgu",
+      "Tri-Band umożliwia równoczesne korzystanie przez punkty dostępowe z trzech pasm częstotliwości, co zwiększa dostępną przepustowość sieci, poprzez wykorzystanie osobnej częstotliwości na komunikację między punktami dostępowymi",
+      "Tri-Band jest technologią umożliwiającą automatyczne przełączanie się urządzeń klienckich między trzema różnymi sieciami WiFi w celu zapewnienia najlepszej wydajności",
+      "Tri-Band pozwala na dynamiczne przydzielanie mocy nadawczej między trzema punktami dostępowymi w sieci mesh"
+    ],
+    "poprawne_odpowiedzi": [
+      "Tri-Band umożliwia równoczesne korzystanie przez punkty dostępowe z trzech pasm częstotliwości, co zwiększa dostępną przepustowość sieci, poprzez wykorzystanie osobnej częstotliwości na komunikację między punktami dostępowymi"
+    ],
+  }
+]
