@@ -1,7 +1,5 @@
 # 🌐 Sieci Komputerowe i Internet
 
-**Computer Networks and Internet - Comprehensive Guide and Interactive Quiz Application**
-
 **Autor:** Mateusz Banaszczyk
 
 ---
