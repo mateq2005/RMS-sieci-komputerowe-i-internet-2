@@ -94,9 +94,9 @@ body {
 }
 
 .tagline a {
-  color: black;
+  color: #696969;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: italic;
 }
 
 /* ===========================
