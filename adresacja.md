@@ -516,7 +516,3 @@ Zadanie polega na rozpoznaniu typu transmisji (unicast, broadcast, multicast) na
 | `FF02::1` | Link-local | Wszystkie hosty IPv6 |
 | `FF02::2` | Link-local | Wszystkie routery IPv6 |
 | `FF05::2` | Site-local | Wszystkie routery w lokacji |
-
----
-
-*Poradnik opracowany na podstawie pytań egzaminacyjnych z zakresu sieci komputerowych (poziom CCNA). Autor pytań źródłowych: Mateusz Banaszczyk.*
