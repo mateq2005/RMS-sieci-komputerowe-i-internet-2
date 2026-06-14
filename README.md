@@ -4,7 +4,8 @@
 
 ---
 
-https://mateq2005.github.io/sieci-komputerowe-i-internet/
+**Strona:**
+- https://mateq2005.github.io/sieci-komputerowe-i-internet/
 
 ---
 
@@ -16,6 +17,6 @@ https://mateq2005.github.io/sieci-komputerowe-i-internet/
 
 Baza zawiera 63 pytania bez ilustracji.
 
-Pytania z ilustracjami w folderze /pytania.
+Pytania z ilustracjami w pytania.md.
 
 Podstawy adresacji sieciowej w pliku adresacja.md.
