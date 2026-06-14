@@ -4,7 +4,9 @@
 
 ---
 
-Źródła: dysk Google, e-kolos.pl.
+Źródła:
+https://drive.google.com/drive/folders/19UhrfVj2gpGz0a2lNW5ALjCBjk24LbFd
+https://ekolos.rms.ovh/s/sieci
 
 Baza zawiera 63 pytania bez grafiki.
 
