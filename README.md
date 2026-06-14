@@ -17,6 +17,9 @@
 
 Baza zawiera 63 pytania bez ilustracji.
 
-Pytania z ilustracjami w pytania.md.
+--- 
 
-Podstawy adresacji sieciowej w pliku adresacja.md.
+Pytania z ilustracjami: - [pytania.md](https://github.com/mateq2005/sieci-komputerowe-i-internet/blob/main/pytania.md)
+
+Adresacja
+- [adresacja.md](https://github.com/mateq2005/sieci-komputerowe-i-internet/blob/main/adresacja.md)
