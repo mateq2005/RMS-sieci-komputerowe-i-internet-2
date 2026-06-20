@@ -24,3 +24,7 @@ Pytania z ilustracjami:
 
 Adresacja
 - [adresacja.md](https://github.com/mateq2005/sieci-komputerowe-i-internet/blob/main/adresacja.md)
+
+---
+
+*Zweryfikowane w Claude z użyciem modelu Sonnet 4.6 Max.*
