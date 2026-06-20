@@ -15,7 +15,7 @@
 
 ---
 
-Baza zawiera 63 pytania bez ilustracji.
+Baza zawiera 57 pytania bez ilustracji.
 
 --- 
 
